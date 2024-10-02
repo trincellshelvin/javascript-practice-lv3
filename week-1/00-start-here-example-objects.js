@@ -51,3 +51,4 @@ class Dog {
 
 // Exporting all functions and classes at the end of the file
 export { createCircle, Circle, createDog, Dog };
+
