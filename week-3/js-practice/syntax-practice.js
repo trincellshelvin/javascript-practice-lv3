@@ -39,8 +39,12 @@ function checkEmptyString(str) {
 
 function checkDivisibleByFive(number) {
   // TODO: Write your solution here
-
+  return number % 5 === 0 ? "Divisible by 5" : "Not Divisible by 5";
 }
+
+// Example usage
+console.log(checkDivisibleByFive(10));  // Expected output: "Divisible by 5"
+console.log(checkDivisibleByFive(7));
 
 // Example usage
 // console.log(checkDivisibleByFive(10));  // Expected output: "Divisible by 5"
@@ -60,10 +64,12 @@ console.log(`First City: ${city1}, Second City: ${city2}`);  // Expected output:
 
 const animals = ["Lion", "Tiger", "Elephant"];
 // TODO: Use array destructuring to extract three animals into three variables
+const [, secondAnimal, thirdAnimal] = animals;
 
 
 // Example usage
 // console.log(`First Animal: ${firstAnimal} Second Animal: ${secondAnimal}, Third Animal: ${thirdAnimal}`);  // Expected output: "Second Animal: Tiger, Third Animal: Elephant"
+console.log(`Second Animal: ${secondAnimal}, Third Animal: ${thirdAnimal}`); 
 
 // TASK 2: Array Destructuring Exercise 2
 // TODO: Destructure an array of four numbers and log the sum of the first two numbers.
@@ -72,10 +78,26 @@ const numbers = [8, 12, 20, 30];
 // TODO: Use array destructuring to extract the first two numbers and calculate their sum
 // const [firstNum, secondNum] = numbers;  // Uncomment this line and complete the TODO
 // const sum = firstNum + secondNum;
-
+const [firstNum, secondNum] = numbers;
+const sum = firstNum + secondNum;
 // Example usage
 // console.log(`Sum: ${sum}`);  // Expected output: "Sum: 20"
-
+console.log(`Sum: ${sum}`);
 // Task 3: Get creative and use the ternary operator with your own example
+function canVote(age) {
+  return age >= 18 ? "Eligible to Vote" : "Not Eligible to Vote";
+}
+
+// Example usage
+console.log(canVote(20)); // Expected output: "Eligible to Vote"
+console.log(canVote(16)); // Expected output: "Not Eligible to Vote"
 
 // Task 4: Get creative and use array destructuring with your own example
+const ages = [20, 16, 25, 17];
+
+const [firstAge, secondAge, thirdAge, fourthAge] = ages;
+
+console.log(canVote(firstAge)); // Expected output: "Eligible to Vote"
+console.log(canVote(secondAge)); // Expected output: "Not Eligible to Vote"
+console.log(canVote(thirdAge)); // Expected output: "Eligible to Vote"
+console.log(canVote(fourthAge)); // Expected output: "Not Eligible to Vote"
