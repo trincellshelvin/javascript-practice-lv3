@@ -15,7 +15,8 @@ console.log(fruitLengths); // Expected output: [5, 6, 6]
 // Instructions: Use `map` with an arrow function to return a new array where each number is squared.
 const numbers = [1, 2, 3, 4, 5];
 // Your code here
-
+const squares = numbers.map(num => num * num);
+console.log(squares); 
 // Expected output: [1, 4, 9, 16, 25]
 
 
@@ -23,7 +24,8 @@ const numbers = [1, 2, 3, 4, 5];
 // Instructions: Use `map` with an arrow function to return a new array where each string in the array is capitalized.
 const fruits = ["apple", "banana", "cherry", "date"];
 // Your code here
-
+const capitalizedFruits = fruits.map(fruit => fruit.toUpperCase());
+console.log(capitalizedFruits);
 // Expected output: ["APPLE", "BANANA", "CHERRY", "DATE"]
 
 
@@ -39,7 +41,8 @@ const booleans = [true, false, true, false];
 // Instructions: Use `map` with an arrow function to return a new array where 10 is added to each number.
 const moreNumbers = [10, 20, 30, 40];
 // Your code here
-
+const booleanStrings = booleans.map(bool => bool.toString());
+console.log(booleanStrings);
 // Expected output: [20, 30, 40, 50]
 
 
@@ -52,7 +55,8 @@ const people = [
   { name: "Diana", age: 40 }
 ];
 // Your code here
-
+const names = people.map(person => person.name);
+console.log(names);
 // Expected output: ["Alice", "Bob", "Charlie", "Diana"]
 
 
@@ -66,5 +70,6 @@ const peopleWithAges = [
   { name: "Diana", age: 40 }
 ];
 // Your code here
-
+const peopleWithAgesStrings = peopleWithAges.map(person => `${person.name} is ${person.age} years old`);
+console.log(peopleWithAgesStrings);
 // Expected output: ["Alice is 25 years old", "Bob is 30 years old", "Charlie is 35 years old", "Diana is 40 years old"]
