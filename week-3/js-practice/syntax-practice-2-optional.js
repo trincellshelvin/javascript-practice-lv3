@@ -25,7 +25,11 @@
 // };
 
 // TODO: Use object destructuring to extract the name and breed and age of the dog into three variables. Log the variables.
+const { name, breed, age } = dog;
 
+console.log(name);  
+console.log(breed); 
+console.log(age);   
 
 // TASK 2: Object Destructuring Exercise 2
 
@@ -43,7 +47,10 @@
 // const { make, model } = car;
 
 // TODO: Use object destructuring to extract only the model and year of the car into two variables. Log the variables.
+const { model, year } = car;
 
+console.log(model); 
+console.log(year);  
 
 // Note, you will see a common short hand in React documentation where you destructure the argument object in the function parameter. For example:
 
@@ -78,8 +85,8 @@ const dog3 = {
 // Now create a function that takes an object with the following properties: name, age, city. The function should return a string with the following format: "Name: [name], Age: [age], City: [city]".
 
 // TODO: complete the personInfo function
-function personInfo(  ) {
-
+function personInfo({ name, age, city }) {
+  return `Name: ${name}, Age: ${age}, City: ${city}`;
 }
 
 // Example usage:
@@ -99,3 +106,21 @@ console.log(personInfo(person1));  // Expected output: "Name: John Doe, Age: 25,
 console.log(personInfo(person2));  // Expected output: "Name: Jane Doe, Age: 30, City: Los Angeles"
 
 // TODO: Now create a function of your own that uses object destructuring and write an example usage of the function.
+function bookInfo({ title, author, year }) {
+  return `Title: ${title}, Author: ${author}, Year: ${year}`;
+}
+
+const book1 = {
+  title: "To Kill a Mockingbird",
+  author: "Harper Lee",
+  year: 1960
+};
+
+const book2 = {
+  title: "1984",
+  author: "George Orwell",
+  year: 1949
+};
+
+console.log(bookInfo(book1)); 
+console.log(bookInfo(book2)); 
