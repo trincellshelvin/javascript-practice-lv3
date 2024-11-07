@@ -20,6 +20,19 @@ function CoinFlip(props) {
   </div>)
 }
 
+function UserStatus(props) {
+  let statusMessage = props.isOnline ? "User is online!" : "User is offline.";
+
+  return (
+    <div className="p-4 m-2 border-2 border-slate">
+      <h1 className="text-lg">User Status</h1>
+      <p>{statusMessage}</p>
+      <p>{props.isOnline ? "Feel free to reach out." : "User may be unavailable."}</p>
+    </div>
+  );
+}
+
+
 // TODO: write your own component
 // Use : ? when declaring a variable
 // Use : ? directly in JSX
@@ -30,16 +43,15 @@ function CoinFlip(props) {
 function TertiaryDemo() {
   return (
     <div className="border-2 border-black rounded size-100"> 
-      <h1 className="text-2xl">Coin Flip Demo</h1>
+      <h1 className="text-2xl">Tertiary Operator Demo</h1>
       <div className="flex justify-around">
         <CoinFlip coinSide="heads"/>
         <CoinFlip coinSide="tails"/>
       </div>
-
-      <div>
-        TODO: Add your Components here!
+      <div className="flex justify-around">
+        <UserStatus isOnline={true} />
+        <UserStatus isOnline={false} />
       </div>
-
     </div>
   );
 }
@@ -48,6 +60,7 @@ function App() {
   return (
     <div>
       <CoinFlipDemo />
+      <UserStatus/>
     </div>
   );
 }

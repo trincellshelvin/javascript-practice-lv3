@@ -27,6 +27,14 @@ function WelcomeMessage(props) {
 // TODO: Add your own component that uses props to display dynamic data
 // Example component: UserInfo
 // Pass props such as "name" and "age" to the component and display them.
+function UserInfo(props) {
+  return (
+    <div className="p-4 m-2 border-2 border-slate">
+      <h2 className="text-lg">User Info</h2>
+      <p>{`Name: ${props.name}, Age: ${props.age}`}</p>
+    </div>
+  );
+}
 
 function PropsDemo() {
   return (
@@ -38,10 +46,14 @@ function PropsDemo() {
         <WelcomeMessage name="Bob" />
         <WelcomeMessage name="Carol" />
         TODO: Add a welcome message for Derek, Emily, and Frank using the WelcomeMessage component and a prop.
-
+        <WelcomeMessage name="Derek" />
+        <WelcomeMessage name="Emily" />
+        <WelcomeMessage name="Frank" />
       </div>
       <div>
         TODO: Add your own component here demonstrating the use of props.
+        <UserInfo name="John" age={28} />
+        <UserInfo name="Jane" age={32} />
       </div>
 
     </div>
@@ -59,11 +71,22 @@ function CoinFlip(props) {
     <div className="p-4 m-2 border-2 border-slate">
       <h1 className="text-lg">Coin flip</h1>
       <p>{announcement}</p>
-      <img 
+      <img
         src={props.coinSide === "heads" ? "./img/heads.webp" : "./img/tails.webp"}
         alt="result"
         className="h-32 w-32"
       />
+    </div>
+  );
+}
+
+function Weather(props) {
+  const weatherMessage = props.temperature >= 75 ? "It's warm outside!" : "It's cool outside.";
+
+  return (
+    <div className="p-4 m-2 border-2 border-slate">
+      <h1 className="text-lg">Weather Update</h1>
+      <p>{weatherMessage}</p>
     </div>
   );
 }
@@ -82,7 +105,8 @@ function TertiaryDemo() {
         <CoinFlip coinSide="tails" />
       </div>
       <div className="flex justify-around">
-        {/* TODO: Add your own component here */}
+        <Weather temperature={80} />
+        <Weather temperature={65} />
       </div>
 
     </div>
@@ -110,6 +134,19 @@ function FruitStore() {
 }
 
 // TODO: Create your own component using array destructuring
+function BookDetails() {
+  const books = ["1984", "Animal Farm", "Brave New World"];
+  const [book1, book2, book3] = books;
+
+  return (
+    <div className="p-4 m-2 border-2 border-slate">
+      <h2 className="text-lg">Favorite Books!</h2>
+      <p>Book 1: {book1}</p>
+      <p>Book 2: {book2}</p>
+      <p>Book 3: {book3}</p>
+    </div>
+  );
+}
 
 function ArrayDestructureDemo() {
   return (
@@ -118,6 +155,7 @@ function ArrayDestructureDemo() {
 
       <div>
         <FruitStore />
+        <BookDetails />
       </div>
       <div>
         TODO: Add your own component here to demonstrate array destructuring.
@@ -132,9 +170,9 @@ function App() {
   return (
     <div>
       <PropsDemo />
-      <hr class="border-blue-500 m-8"/>
+      <hr class="border-blue-500 m-8" />
       <TertiaryDemo />
-      <hr class="border-blue-500 m-8"/>
+      <hr class="border-blue-500 m-8" />
       <ArrayDestructureDemo />
     </div>
   );
