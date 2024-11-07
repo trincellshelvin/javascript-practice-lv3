@@ -19,7 +19,7 @@ function WelcomeMessage(props) {
   return (
     <div className="p-4 m-2 border-2 border-slate">
       <h2 className="text-lg">Welcome Message</h2>
-      <p>{`Welcome, ${props.name}!`}</p>
+      <p>Welcome, {props.name}!</p>
     </div>
   );
 }
@@ -52,8 +52,6 @@ function PropsDemo() {
       </div>
       <div>
         TODO: Add your own component here demonstrating the use of props.
-        <UserInfo name="John" age={28} />
-        <UserInfo name="Jane" age={32} />
       </div>
 
     </div>
@@ -93,20 +91,20 @@ function Weather(props) {
 
 // TODO: Create your own component that uses the ternary operator
 // Example component: Weather
-// Use the ternary operator to display a message based on the props passed (e.g., "temperature").
+// Use the ternary operator to display a message based on the props passed (e.g., "temperature" could determine weather the background is blue or red.)
+// You may make any component you like.
 
-function TertiaryDemo() {
+function TernaryDemo() {
   return (
     <div className="border-2 border-black rounded size-100">
-      <h1 className="text-2xl">Tertiary Operator</h1>
+      <h1 className="text-2xl">Ternary Operator</h1>
 
       <div className="flex justify-around">
         <CoinFlip coinSide="heads" />
         <CoinFlip coinSide="tails" />
       </div>
       <div className="flex justify-around">
-        <Weather temperature={80} />
-        <Weather temperature={65} />
+        {/* TODO: Add your own component here */}
       </div>
 
     </div>
@@ -158,7 +156,7 @@ function ArrayDestructureDemo() {
         <BookDetails />
       </div>
       <div>
-        TODO: Add your own component here to demonstrate array destructuring.
+        TODO: Add your own component here. Add instances of the component you created above here.
       </div>
 
     </div>
@@ -170,9 +168,9 @@ function App() {
   return (
     <div>
       <PropsDemo />
-      <hr class="border-blue-500 m-8" />
+      <hr class="border-blue-500 m-8"/>
       <TertiaryDemo />
-      <hr class="border-blue-500 m-8" />
+      <hr class="border-blue-500 m-8"/>
       <ArrayDestructureDemo />
     </div>
   );
