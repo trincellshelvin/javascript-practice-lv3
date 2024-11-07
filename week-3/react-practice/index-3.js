@@ -18,7 +18,7 @@ function CoinFlip(props) {
     <div className="p-4 m-2 border-2 border-slate">
       <h1 className="text-lg">Coin flip</h1>
       <p>{announcement}</p>
-      <img 
+      <img
         src={props.coinSide === "heads" ? "./img/heads.webp" : "./img/tails.webp"}
         alt="result"
         className="h-32 w-32"
@@ -28,6 +28,14 @@ function CoinFlip(props) {
 }
 
 // TODO: create your own component that uses the ternary operator
+function LoginStatus(props) {
+  return (
+    <div className="p-4 m-2 border-2 border-slate">
+      <h1 className="text-lg">User Status</h1>
+      <p>{props.isLoggedIn ? "Welcome back!" : "Please log in."}</p>
+    </div>
+  );
+}
 
 
 function TertiaryDemo() {
@@ -42,7 +50,10 @@ function TertiaryDemo() {
       <div className="flex justify-around">
 
         TODO: Add your own Component here to demonstrate the ternary operator.
-
+        <div className="flex justify-around"> 
+          <LoginStatus isLoggedIn={true} /> 
+          <LoginStatus isLoggedIn={false} />
+        </div>
       </div>
 
     </div>
@@ -57,7 +68,7 @@ function TertiaryDemo() {
 function FruitStore() {
   const fruits = ["apples", "blueberries", "cherries"];
   // Destructure the fruit array
-  const [f1, f2, f3] = fruits ;
+  const [f1, f2, f3] = fruits;
 
   return (
     <div className="p-4 m-2 border-2 border-slate">
@@ -78,6 +89,7 @@ function ArrayDestructureDemo() {
 
       <div>
         <FruitStore />
+        <BookDetails />
       </div>
       <div>
 
@@ -85,6 +97,21 @@ function ArrayDestructureDemo() {
 
       </div>
 
+    </div >
+  );
+}
+
+
+function BookDetails() {
+  const books = ["1984", "Animal Farm", "Brave New World"];
+  const [book1, book2, book3] = books;
+
+  return (
+    <div className="p-4 m-2 border-2 border-slate">
+      <h2 className="text-lg">Favorite Books!</h2>
+      <p>Book 1: {book1}</p>
+      <p>Book 2: {book2}</p>
+      <p>Book 3: {book3}</p>
     </div>
   );
 }
